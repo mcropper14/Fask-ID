@@ -76,19 +76,7 @@ public class barcode extends AppCompatActivity implements View.OnClickListener{
                     finishAffinity();
                 }else{
                     Toast.makeText(this, "Incorrect Mask Code!!", Toast.LENGTH_LONG).show();
-                    builder.setPositiveButton("Scan Mask Again", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            scanCode();
-                        }
-                    }).setNegativeButton("finished", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            finish();
-                        }
-                    });
+                    builder.setPositiveButton("Scan Mask Again", (dialog, which) -> scanCode()).setNegativeButton("finished", (dialog, which) -> finish());
                 }
                 builder.setTitle("Scanning Mask Code..");
 
